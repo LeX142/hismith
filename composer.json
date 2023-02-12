@@ -46,7 +46,8 @@
         ],
         "post-install-cmd": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
-            "@php artisan key:generate --ansi"
+            "@php artisan key:generate --ansi",
+            "@php vendor/bin/openapi -o spec.yml --format yaml app/"
         ],
         "openapi-generate": [
             "@php vendor/bin/openapi -o spec.yml --format yaml app/"
